@@ -1,0 +1,39 @@
+<div class="bg">
+
+  <div class="register-card">
+    <h2>📝 Register</h2>
+
+    <input 
+      type="text" 
+      placeholder="Full Name"
+      [(ngModel)]="Name"
+    />
+
+    <input 
+      type="email" 
+      placeholder="Email"
+      [(ngModel)]="Email"
+    />
+
+    <input 
+      type="password" 
+      placeholder="Password"
+      [(ngModel)]="Password"
+    />
+
+    <input 
+      type="password" 
+      placeholder="Confirm Password"
+      [(ngModel)]="confirmPassword"
+    />
+
+    <button (click)="register()">Register</button>
+
+    <p class="login-link">
+      Already have an account? 
+      <span (click)="goToLogin()">Login</span>
+    </p>
+
+  </div>
+
+</div>

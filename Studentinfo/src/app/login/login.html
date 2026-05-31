@@ -1,0 +1,149 @@
+<div class="bg">
+
+  <div class="login-card">
+
+    <h2>Login</h2>
+
+    <!-- EMAIL -->
+
+    <input
+      type="email"
+      placeholder="Enter Email"
+      [(ngModel)]="Email"
+    />
+
+  
+
+    <!-- PASSWORD -->
+
+    <!-- <input
+      type="password"
+      placeholder="Enter Password"
+      [(ngModel)]="Password"
+    />
+
+    <div class="forgot-password">
+
+<a (click)="goToForgotPassword()">
+
+  Forgot Password?
+
+</a>
+
+</div> -->
+
+
+<!-- PASSWORD -->
+
+<div class="password-container">
+
+  <input
+    [type]="showPassword ? 'text' : 'password'"
+    placeholder="Enter Password"
+    [(ngModel)]="Password"
+  />
+
+</div>
+
+<!-- SHOW PASSWORD -->
+
+<div class="show-password">
+
+  <input
+    type="checkbox"
+    id="showPass"
+    (change)="showPassword = !showPassword"
+  />
+
+  <label for="showPass">
+    Show Password
+  </label>
+
+</div>
+
+<!-- FORGOT PASSWORD -->
+
+<div class="forgot-password">
+
+  <a (click)="goToForgotPassword()">
+
+    Forgot Password?
+
+  </a>
+
+</div>
+
+    <!-- ================= CAPTCHA ================= -->
+
+    <div class="captcha-container">
+
+      <!-- CAPTCHA ROW -->
+
+      <div class="captcha-row">
+
+        <!-- CAPTCHA IMAGE -->
+<!-- CAPTCHA IMAGE -->
+<img
+  *ngIf="captchaUrl"
+  [src]="captchaUrl"
+  alt="captcha"
+  class="captcha-image"
+/>
+
+        <!-- AUDIO BUTTON -->
+
+        <button
+          type="button"
+          class="captcha-btn"
+          (click)="speakCaptcha()"
+        >
+          🔊
+        </button>
+
+        <!-- REFRESH BUTTON -->
+
+        <button
+          type="button"
+          class="captcha-btn"
+          (click)="refreshCaptcha()"
+        >
+          ↻
+        </button>
+
+      </div>
+
+      <!-- CAPTCHA INPUT -->
+
+      <input
+        type="text"
+        placeholder="Enter CAPTCHA"
+        [(ngModel)]="captchaInput"
+        class="captcha-input"
+      />
+
+    </div>
+
+    <!-- LOGIN BUTTON -->
+
+    <button
+      class="login-btn"
+      (click)="login()"
+    >
+      Login
+    </button>
+
+    <!-- REGISTER -->
+
+    <p class="register-link">
+
+      Don't have an account?
+
+      <span (click)="goToRegister()">
+        Register
+      </span>
+
+    </p>
+
+  </div>
+
+</div>

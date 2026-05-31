@@ -1,0 +1,135 @@
+/* ========================================= */
+/* GOOGLE FONT */
+/* ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ========================================= */
+/* GLOBAL RESET */
+/* ========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ========================================= */
+/* HTML + BODY */
+/* ========================================= */
+
+html,
+body{
+
+  width:100%;
+  height:100%;
+
+  font-family:'Poppins',sans-serif;
+
+  scroll-behavior:smooth;
+
+  background:#020617;
+
+  overflow-x:hidden;
+}
+
+/* ========================================= */
+/* GLOBAL TEXT */
+/* ========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+  margin:0;
+
+  font-weight:700;
+}
+
+p{
+  margin:0;
+}
+
+/* ========================================= */
+/* LINKS */
+/* ========================================= */
+
+a{
+
+  text-decoration:none;
+
+  color:inherit;
+}
+
+/* ========================================= */
+/* BUTTON RESET */
+/* ========================================= */
+
+button{
+
+  font-family:'Poppins',sans-serif;
+
+  outline:none;
+}
+
+/* ========================================= */
+/* INPUT RESET */
+/* ========================================= */
+
+input,
+textarea,
+select{
+
+  font-family:'Poppins',sans-serif;
+
+  outline:none;
+}
+
+/* ========================================= */
+/* IMAGES */
+/* ========================================= */
+
+img{
+
+  max-width:100%;
+
+  display:block;
+}
+
+/* ========================================= */
+/* SCROLLBAR */
+/* ========================================= */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:
+  linear-gradient(
+    180deg,
+    #3b82f6,
+    #8b5cf6
+  );
+
+  border-radius:20px;
+}
+
+/* ========================================= */
+/* SELECTION */
+/* ========================================= */
+
+::selection{
+
+  background:#8b5cf6;
+
+  color:white;
+}

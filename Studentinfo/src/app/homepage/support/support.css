@@ -1,0 +1,497 @@
+/* ===================================================== */
+/* SUPPORT SECTION */
+/* ===================================================== */
+
+.support-section{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:70px;
+
+  padding:80px 70px;
+
+  color:white;
+
+  overflow:hidden;
+}
+
+/* ===================================================== */
+/* LEFT SIDE */
+/* ===================================================== */
+
+.support-left{
+
+  flex:1;
+
+  max-width:750px;
+}
+
+.support-badge{
+
+  display:inline-block;
+
+  padding:12px 24px;
+
+  border-radius:40px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  margin-bottom:35px;
+
+  color:#e2e8f0;
+
+  font-size:16px;
+}
+
+.support-left h1{
+
+  font-size:78px;
+
+  line-height:1.05;
+
+  margin-bottom:35px;
+
+  font-weight:800;
+}
+
+.support-left p{
+
+  font-size:21px;
+
+  line-height:2;
+
+  color:#cbd5e1;
+
+  margin-bottom:45px;
+}
+
+/* ===================================================== */
+/* FEATURES */
+/* ===================================================== */
+
+.support-features{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+
+  margin-bottom:50px;
+}
+
+.support-box{
+
+  padding:24px 28px;
+
+  border-radius:24px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  font-size:18px;
+
+  transition:0.3s ease;
+}
+
+.support-box:hover{
+
+  transform:translateX(10px);
+
+  background:
+  rgba(255,255,255,0.08);
+}
+
+/* ===================================================== */
+/* BUTTONS */
+/* ===================================================== */
+
+.support-buttons{
+
+  display:flex;
+
+  gap:20px;
+}
+
+.support-btn,
+.guide-btn{
+
+  padding:18px 36px;
+
+  border:none;
+
+  border-radius:18px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.support-btn{
+
+  background:
+  linear-gradient(135deg,#6366f1,#8b5cf6);
+
+  color:white;
+
+  box-shadow:
+  0 15px 35px rgba(99,102,241,0.35);
+}
+
+.support-btn:hover{
+
+  transform:translateY(-5px);
+}
+
+.guide-btn{
+
+  background:transparent;
+
+  border:
+  1px solid rgba(255,255,255,0.12);
+
+  color:white;
+}
+
+.guide-btn:hover{
+
+  background:
+  rgba(255,255,255,0.08);
+}
+
+/* ===================================================== */
+/* RIGHT SIDE */
+/* ===================================================== */
+
+.support-right{
+
+  flex:1;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+/* ===================================================== */
+/* ANIMATION BOX */
+/* ===================================================== */
+
+.animation-box{
+
+  position:relative;
+
+  width:650px;
+
+  height:650px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+/* ===================================================== */
+/* CENTER CORE */
+/* ===================================================== */
+
+.center-support{
+
+  position:relative;
+
+  width:220px;
+
+  height:220px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+.support-core{
+
+  width:180px;
+
+  height:180px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(135deg,#6366f1,#8b5cf6);
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:28px;
+
+  font-weight:800;
+
+  z-index:5;
+
+  box-shadow:
+  0 0 60px rgba(139,92,246,0.7);
+
+  animation:floatCore 4s ease-in-out infinite;
+}
+
+@keyframes floatCore{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* ===================================================== */
+/* PULSE */
+/* ===================================================== */
+
+.pulse-ring{
+
+  position:absolute;
+
+  width:260px;
+
+  height:260px;
+
+  border-radius:50%;
+
+  border:
+  3px solid rgba(139,92,246,0.5);
+
+  animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+
+  0%{
+
+    transform:scale(0.8);
+
+    opacity:1;
+  }
+
+  100%{
+
+    transform:scale(1.5);
+
+    opacity:0;
+  }
+}
+
+/* ===================================================== */
+/* FLOATING UI */
+/* ===================================================== */
+
+.floating-ui{
+
+  position:absolute;
+
+  padding:18px 28px;
+
+  border-radius:22px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(14px);
+
+  font-size:18px;
+
+  font-weight:600;
+
+  animation:floatCard 4s ease-in-out infinite;
+}
+
+/* POSITIONS */
+
+.ui1{
+
+  top:70px;
+  left:120px;
+}
+
+.ui2{
+
+  top:130px;
+  right:60px;
+}
+
+.ui3{
+
+  bottom:120px;
+  left:80px;
+}
+
+.ui4{
+
+  bottom:70px;
+  right:100px;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes floatCard{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* ===================================================== */
+/* GLOWING CIRCLES */
+/* ===================================================== */
+
+.circle{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(70px);
+
+  opacity:0.5;
+}
+
+.circle1{
+
+  width:250px;
+  height:250px;
+
+  background:#7c3aed;
+
+  top:40px;
+  left:40px;
+}
+
+.circle2{
+
+  width:300px;
+  height:300px;
+
+  background:#2563eb;
+
+  bottom:20px;
+  right:20px;
+}
+
+.circle3{
+
+  width:200px;
+  height:200px;
+
+  background:#9333ea;
+
+  top:250px;
+  right:200px;
+}
+
+/* ===================================================== */
+/* MOBILE */
+/* ===================================================== */
+
+@media(max-width:1200px){
+
+  .support-section{
+
+    flex-direction:column;
+  }
+
+  .support-left h1{
+
+    font-size:60px;
+  }
+}
+
+@media(max-width:768px){
+
+  .support-section{
+
+    padding:60px 20px;
+  }
+
+  .support-left h1{
+
+    font-size:44px;
+  }
+
+  .support-left p{
+
+    font-size:17px;
+  }
+
+  .support-buttons{
+
+    flex-direction:column;
+  }
+
+  .support-btn,
+  .guide-btn{
+
+    width:100%;
+  }
+
+  .animation-box{
+
+    width:100%;
+
+    height:500px;
+  }
+
+  .support-core{
+
+    width:140px;
+    height:140px;
+
+    font-size:22px;
+  }
+
+  .floating-ui{
+
+    font-size:14px;
+
+    padding:14px 18px;
+  }
+}

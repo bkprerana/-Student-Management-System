@@ -1,0 +1,175 @@
+<div class="container">
+
+  <h2>Search Student</h2>
+
+  <!-- SEARCH SECTION -->
+  <div class="search-box">
+
+    <label>
+      Enter Roll Number:
+    </label>
+
+    <br>
+
+    <input
+      type="number"
+      [(ngModel)]="rollNumber"
+      (input)="onInputChange()"
+      placeholder="Enter Roll Number">
+
+  </div>
+
+  <br>
+
+  <!-- BUTTONS -->
+  <div class="button-group">
+
+    <button (click)="getStudent()">
+      Search
+    </button>
+
+    <button (click)="clearSearch()">
+      Reset
+    </button>
+
+  </div>
+
+  <hr>
+
+  <!-- SEARCHED STUDENT DETAILS -->
+  <div
+    *ngIf="student"
+    class="student-details">
+
+    <h3>
+      🎓 Student Details
+    </h3>
+
+    <table class="student-table">
+
+      <thead>
+
+        <tr>
+
+          <th>Roll</th>
+          <th>Name</th>
+          <th>Semester</th>
+          <th>Class</th>
+          <th>Address</th>
+          <th>Joining Date</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+
+          <td>
+            {{ student.RollNumber }}
+          </td>
+
+          <td>
+            {{ student.StudentName }}
+          </td>
+
+          <td>
+            {{ student.Semester }}
+          </td>
+
+          <td>
+            {{ student.Class }}
+          </td>
+
+          <td>
+            {{ student.Address }}
+          </td>
+
+          <td>
+            {{ student.JoiningDate }}
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <hr>
+
+  </div>
+
+  <!-- NOT FOUND -->
+  <div
+    *ngIf="searched && !student"
+    class="not-found">
+
+    <p style="color:red; font-weight:bold;">
+
+      Student not found ❌
+
+    </p>
+
+    <hr>
+
+  </div>
+
+  <!-- ALL STUDENTS -->
+  <div class="all-students">
+
+    <h3>
+      📋 All Students
+    </h3>
+
+  <div *ngIf="students && students.length === 0">
+
+  <p>
+    Loading students...
+  </p>
+
+</div>
+
+    <!-- TABLE -->
+   <table
+  class="student-table"
+  *ngIf="students && students.length > 0">
+
+      <thead>
+
+        <tr>
+
+          <th>Roll</th>
+          <th>Name</th>
+          <th>Semester</th>
+          <th>Class</th>
+          <th>Address</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+<tr
+  *ngFor="let s of students"
+  [class.highlight-row]="student && s.RollNumber == student.RollNumber">
+
+  <td>{{ s.RollNumber }}</td>
+
+  <td>{{ s.StudentName }}</td>
+
+  <td>{{ s.Semester }}</td>
+
+  <td>{{ s.Class }}</td>
+
+  <td>{{ s.Address }}</td>
+
+</tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

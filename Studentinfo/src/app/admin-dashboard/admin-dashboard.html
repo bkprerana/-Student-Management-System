@@ -1,0 +1,122 @@
+<div class="layout">
+
+  <!-- 🔵 SIDEBAR -->
+  <div class="sidebar">
+    <h2>🛠 Admin</h2>
+
+    <ul>
+      <li (click)="navigate('admin-dashboard')">🏠 Dashboard</li>
+      <li (click)="navigate('create-student')">➕ Add Student</li>
+      <li (click)="navigate('student-list')">📋 View Students</li>
+      <li (click)="navigate('student-update')">✏️ Update</li>
+      <li (click)="navigate('student-delete')">🗑 Delete</li>
+      <li (click)="logout()">🚪 Logout</li>
+    </ul>
+  </div>
+
+  <!-- 🟢 MAIN CONTENT -->
+  <div class="main">
+
+    <h1>👨‍💼 Admin Dashboard</h1>
+
+    <!-- 🔹 ROLL -->
+    <label>Roll Number:</label>
+    <input type="number" [(ngModel)]="rollNumber" />
+
+    <!-- 🔥 STUDENT UPDATE -->
+    <h3>🧑 Student Update</h3>
+    <div class="row">
+      <input placeholder="Name" [(ngModel)]="student.StudentName" />
+      <input type="number" placeholder="Semester" [(ngModel)]="student.Semester" />
+      <input placeholder="Class" [(ngModel)]="student.Class" />
+    </div>
+
+    <input placeholder="Address" [(ngModel)]="student.Address" />
+
+    <div class="btns">
+      <button (click)="updateStudent()">Update</button>
+      <button (click)="deleteStudent()">Delete</button>
+    </div>
+
+    <!-- 📚 ACADEMIC -->
+    <h3>📚 Academic</h3>
+
+    <!-- ✅ ADDED -->
+    <div class="row">
+      <input placeholder="Subject" [(ngModel)]="academic.Subject" />
+      <input type="number" placeholder="Marks" [(ngModel)]="academic.Marks" />
+      <input placeholder="Grade" [(ngModel)]="academic.Grade" />
+
+      <!-- ✅ NEW -->
+      <input
+        type="number"
+        placeholder="Semester"
+        [(ngModel)]="academic.Semester"
+      />
+    </div>
+
+    <button (click)="saveAcademic()">Save</button>
+
+    <!-- 📅 ATTENDANCE -->
+    <h3>📅 Attendance</h3>
+
+    <!-- ✅ ADDED -->
+    <div class="row">
+      <input type="number" placeholder="Total" [(ngModel)]="attendance.TotalClasses" />
+      <input type="number" placeholder="Present" [(ngModel)]="attendance.Present" />
+      <input type="number" placeholder="Absent" [(ngModel)]="attendance.Absent" />
+
+      <!-- ✅ NEW -->
+      <input
+        type="number"
+        placeholder="Semester"
+        [(ngModel)]="attendance.Semester"
+      />
+    </div>
+
+    <button (click)="saveAttendance()">Save</button>
+
+    <!-- 💰 FEES -->
+    <h3>💰 Fees</h3>
+
+    <!-- ✅ ADDED -->
+    <div class="row">
+      <input type="number" placeholder="Total" [(ngModel)]="fees.TotalFees" />
+      <input type="number" placeholder="Paid" [(ngModel)]="fees.Paid" />
+      <input type="number" placeholder="Pending" [(ngModel)]="fees.Pending" />
+
+      <!-- ✅ NEW -->
+      <input
+        type="number"
+        placeholder="Semester"
+        [(ngModel)]="fees.Semester"
+      />
+    </div>
+
+    <button (click)="saveFees()">Save</button>
+
+    <!-- 📢 NOTIFICATION -->
+    <h3>📢 Notification</h3>
+
+    <!-- ✅ ADDED -->
+    <div class="row">
+
+      <input
+        placeholder="Message"
+        [(ngModel)]="notification.Message"
+      />
+
+      <!-- ✅ NEW -->
+      <input
+        type="number"
+        placeholder="Semester"
+        [(ngModel)]="notification.Semester"
+      />
+
+    </div>
+
+    <button (click)="sendNotification()">Send</button>
+
+  </div>
+
+</div>

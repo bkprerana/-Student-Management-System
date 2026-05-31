@@ -1,0 +1,114 @@
+<!-- <div style="border:1px solid black; padding:20px; margin-top:20px;">
+
+  <h3>Additional Details</h3>
+
+  <label>Semester:</label>
+  <input type="number" [(ngModel)]="studentData.Semester"><br><br>
+
+  <label>Class:</label>
+  <input type="text" [(ngModel)]="studentData.Class"><br><br>
+
+  <label>Address:</label>
+  <input type="text" [(ngModel)]="studentData.Address"><br><br>
+
+  <label>Joining Date:</label>
+  <input type="date" [(ngModel)]="studentData.JoiningDate"><br><br>
+
+  <label>email:</label>
+<input type="email" [(ngModel)]="studentData.Email">
+
+  <button (click)="submit()">Submit</button>
+  <button (click)="close()">Close</button>
+
+</div> -->
+
+
+
+<div class="modal-overlay">
+
+  <div class="modal-card">
+
+    <div class="modal-icon">📘</div>
+
+    <h3>Additional Details</h3>
+
+    <p class="modal-subtitle">
+      Complete remaining student information
+    </p>
+
+    <!-- Semester -->
+    <div class="form-group">
+
+      <label>Semester</label>
+
+      <input
+        type="number"
+        [(ngModel)]="studentData.Semester"
+        placeholder="Enter Semester">
+    </div>
+
+    <!-- Class -->
+    <div class="form-group">
+
+      <label>Class</label>
+
+      <input
+        type="text"
+        [(ngModel)]="studentData.Class"
+        placeholder="Enter Class">
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+
+      <label>Address</label>
+
+      <input
+        type="text"
+        [(ngModel)]="studentData.Address"
+        placeholder="Enter Address">
+    </div>
+
+    <!-- Date -->
+    <div class="form-group">
+
+      <label>Joining Date</label>
+
+      <input
+        type="date"
+        [(ngModel)]="studentData.JoiningDate">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+
+      <label>Email</label>
+
+      <input
+        type="email"
+        [(ngModel)]="studentData.Email"
+        placeholder="Enter Email">
+    </div>
+
+    <!-- Buttons -->
+    <div class="modal-buttons">
+
+      <button
+        class="submit-btn"
+        (click)="submit()">
+
+        Submit
+      </button>
+
+      <button
+        class="close-btn"
+        (click)="close()">
+
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

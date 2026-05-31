@@ -1,0 +1,155 @@
+<div class="container">
+
+  <!-- ========================================= -->
+  <!-- UPDATE CARD -->
+  <!-- ========================================= -->
+
+  <div class="update-card">
+
+    <!-- TITLE -->
+
+    <h2>🎓 Update Student</h2>
+
+    <!-- ========================================= -->
+    <!-- SEARCH SECTION -->
+    <!-- ========================================= -->
+
+    <div class="search-section">
+
+      <div class="search-input">
+
+        <label>Enter Roll Number</label>
+
+        <input
+          type="number"
+          [(ngModel)]="rollNumber"
+          placeholder="Enter Roll Number"
+        />
+
+      </div>
+
+      <button
+        class="fetch-btn"
+        (click)="getStudent()"
+      >
+        Fetch Student
+      </button>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- STUDENT FORM -->
+    <!-- ========================================= -->
+
+    <div
+      class="details-box"
+      *ngIf="student"
+    >
+
+      <h3>📝 Edit Student Details</h3>
+
+      <form (ngSubmit)="updateStudent()">
+
+        <!-- STUDENT NAME -->
+
+        <div>
+
+          <label>Student Name</label>
+
+          <input
+            type="text"
+            [(ngModel)]="student.StudentName"
+            name="StudentName"
+            placeholder="Enter Student Name"
+          />
+
+        </div>
+
+        <!-- SEMESTER -->
+
+        <div>
+
+          <label>Semester</label>
+
+          <input
+            type="number"
+            [(ngModel)]="student.Semester"
+            name="Semester"
+            placeholder="Enter Semester"
+          />
+
+        </div>
+
+        <!-- CLASS -->
+
+        <div>
+
+          <label>Class</label>
+
+          <input
+            type="text"
+            [(ngModel)]="student.Class"
+            name="Class"
+            placeholder="Enter Class"
+          />
+
+        </div>
+
+        <!-- ADDRESS -->
+
+        <div>
+
+          <label>Address</label>
+
+          <input
+            type="text"
+            [(ngModel)]="student.Address"
+            name="Address"
+            placeholder="Enter Address"
+          />
+
+        </div>
+
+        <!-- JOINING DATE -->
+
+        <div class="full-width">
+
+          <label>Joining Date</label>
+
+          <input
+            type="date"
+            [(ngModel)]="student.JoiningDate"
+            name="JoiningDate"
+          />
+
+        </div>
+
+        <!-- UPDATE BUTTON -->
+
+        <button
+          type="submit"
+          class="update-btn"
+        >
+          Update Student
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- NOT FOUND -->
+    <!-- ========================================= -->
+
+    <div
+      class="not-found"
+      *ngIf="student === null && searched"
+    >
+
+      Student not found ❌
+
+    </div>
+
+  </div>
+
+</div>

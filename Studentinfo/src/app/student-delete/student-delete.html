@@ -1,0 +1,75 @@
+<!-- <div class="container">
+  <h2>Delete Student</h2>
+
+  <label>Enter Roll Number:</label><br>
+  <input type="number" [(ngModel)]="rollNumber" placeholder="Enter Roll Number">
+
+  <br><br>
+
+  <button (click)="deleteStudent()">Delete Student</button>
+
+  <br><br>
+
+  <p *ngIf="message" style="color:green;">{{ message }}</p>
+  <p *ngIf="error" style="color:red;">{{ error }}</p>
+</div> -->
+
+
+
+<div class="container">
+
+  <div class="delete-card">
+
+    <div class="icon-box">
+      🗑
+    </div>
+
+    <h2>Delete Student</h2>
+
+    <p class="subtitle">
+      Remove student records securely from the system
+    </p>
+
+    <div class="form-group">
+
+      <label>Enter Roll Number</label>
+
+      <input
+        type="number"
+        [(ngModel)]="rollNumber"
+        placeholder="Enter Roll Number"
+      >
+
+    </div>
+
+   <button
+  type="button"
+  class="delete-btn"
+  (click)="deleteStudent()"
+>
+      Delete Student
+    </button>
+
+    <!-- SUCCESS MESSAGE -->
+    <div
+      class="success-message"
+      *ngIf="message"
+    >
+      {{ message }}
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <div
+      class="error-message"
+      *ngIf="error"
+    >
+      {{ error }}
+    </div>
+
+    <div class="warning-box">
+      ⚠ This action is permanent and cannot be undone.
+    </div>
+
+  </div>
+
+</div>

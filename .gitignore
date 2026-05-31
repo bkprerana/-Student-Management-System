@@ -1,0 +1,8 @@
+node_modules/
+Server/node_modules/
+Studentinfo/node_modules/
+
+dist/
+.angular/
+.env
+.vscode/

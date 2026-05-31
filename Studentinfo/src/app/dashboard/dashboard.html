@@ -1,0 +1,238 @@
+<div class="layout">
+
+  <!-- 🔵 SIDEBAR -->
+  <div class="sidebar">
+    <h2>🎓 Student</h2>
+
+    <p style="color: #ccc; font-size: 12px; margin-bottom: 15px;">
+      Role: {{ role }}
+    </p>
+
+    <ul>
+      <li (click)="navigate('dashboard')">🏠 Dashboard</li>
+
+      <li *ngIf="role === 'admin'" (click)="navigate('create-student')">
+        ➕ Add Student
+      </li>
+
+      <li (click)="navigate('student-list')">📋 View Students</li>
+
+      <li *ngIf="role === 'admin'" (click)="navigate('student-update')">
+        ✏️ Update
+      </li>
+
+      <li *ngIf="role === 'admin'" (click)="navigate('student-delete')">
+        🗑️ Delete
+      </li>
+
+      <li (click)="navigate('submit-student')">📤 Submit</li>
+
+      <li (click)="logout()" style="margin-top:20px; color:#ff6b6b;">
+        🚪 Logout
+      </li>
+    </ul>
+  </div>
+
+  <!-- 🟢 MAIN CONTENT -->
+  <div class="main">
+
+    <h1>Student Dashboard</h1>
+
+    <!-- 🔥 PROFILE CARD -->
+    <div class="profile-box">
+      <h2>{{ student?.StudentName }}</h2>
+      <p>Roll: {{ student?.RollNumber }}</p>
+      <p>{{ student?.Class }} | Sem {{ student?.Semester }}</p>
+    </div>
+
+    <!-- 🔷 STATS CARDS -->
+    <div class="cards">
+
+      <div class="card">
+
+  <h2>{{ gpa | number:'1.1-2' }}</h2>
+
+  <p>GPA</p>
+
+  <!-- ================= CGPA STATUS ================= -->
+
+  <div class="cgpa-indicator">
+
+    <!-- EXCELLENT -->
+
+    <div *ngIf="gpa >= 8"
+         class="cgpa-status excellent">
+
+      <span class="dot green"></span>
+
+      Excellent
+
+    </div>
+
+    <!-- AVERAGE -->
+
+    <div *ngIf="gpa >= 5 && gpa < 8"
+         class="cgpa-status average">
+
+      <span class="dot yellow"></span>
+
+      Average
+
+    </div>
+
+    <!-- CRITICAL -->
+
+    <div *ngIf="gpa < 5"
+         class="cgpa-status critical">
+
+      <span class="dot red"></span>
+
+      Critical
+
+    </div>
+
+  </div>
+
+</div>
+
+      <div class="card">
+        <h2>
+          {{ attendance?.TotalClasses ?
+          (attendance.Present / attendance.TotalClasses * 100) : 0 | number:'1.0-0' }}%
+        </h2>
+        <p>Attendance</p>
+      </div>
+
+      <div class="card">
+        <h2>₹{{ fees?.Pending }}</h2>
+        <p>Fees Pending</p>
+      </div>
+
+      <div class="card">
+        <h2>{{ role }}</h2>
+        <p>User Role</p>
+      </div>
+
+    </div>
+
+    <!-- ================= SEMESTER FILTER ================= -->
+
+    <div class="semester-box">
+
+      <label>Select Semester:</label>
+
+      <select
+        [(ngModel)]="selectedSemester"
+        (change)="loadSemesterData()"
+      >
+
+        <option *ngFor="let s of semesters"
+                [value]="s">
+
+          Semester {{ s }}
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- 📊 OLD CHART -->
+    <div class="chart-card full-width">
+
+  <h3>📚 Academic Performance Analysis</h3>
+
+  <canvas id="semesterChart"></canvas>
+
+</div>
+
+    <!-- ================= ANALYTICS ================= -->
+
+    <div class="analytics-section">
+
+      <!-- Attendance Pie -->
+      <div class="chart-card">
+        <h3>📊 Attendance Analytics</h3>
+        <canvas id="attendanceChart"></canvas>
+      </div>
+
+      <!-- Fees Doughnut -->
+      <div class="chart-card">
+        <h3>🍩 Fees Analytics</h3>
+        <canvas id="feesChart"></canvas>
+      </div>
+
+      <!-- GPA Line -->
+      <div class="chart-card full-width">
+        <h3>📈 GPA Progress</h3>
+        <canvas id="gpaChart"></canvas>
+      </div>
+
+    </div>
+
+    <!-- 📚 ACADEMIC INFO -->
+    <h3>📚 Academic Info</h3>
+
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Grade</th>
+      </tr>
+
+      <tr *ngFor="let a of academic">
+        <td>{{ a.Subject }}</td>
+        <td>{{ a.Marks }}</td>
+        <td>{{ a.Grade }}</td>
+      </tr>
+    </table>
+
+    <!-- 📅 ATTENDANCE -->
+    <h3>📅 Attendance</h3>
+
+    <div class="card">
+      <p>Total Classes: {{ attendance?.TotalClasses }}</p>
+      <p>Present: {{ attendance?.Present }}</p>
+      <p>Absent: {{ attendance?.Absent }}</p>
+    </div>
+
+    <!-- 💰 FEES -->
+    <h3>💰 Fees Section</h3>
+
+    <div class="card">
+      <p>Total Fees: ₹{{ fees?.TotalFees }}</p>
+      <p>Paid: ₹{{ fees?.Paid }}</p>
+      <p>Pending: ₹{{ fees?.Pending }}</p>
+    </div>
+
+    <!-- 📢 NOTIFICATIONS -->
+    <h3>📢 Notifications</h3>
+
+    <ul class="notification-box">
+      <li *ngFor="let n of notifications">
+        {{ n.Message }} ({{ n.Date }})
+      </li>
+    </ul>
+
+    <!-- 📋 STUDENTS -->
+    <h3>Recent Students</h3>
+
+    <table>
+      <tr>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Semester</th>
+      </tr>
+
+      <tr *ngFor="let s of students">
+        <td>{{ s.RollNumber }}</td>
+        <td>{{ s.StudentName }}</td>
+        <td>{{ s.Class }}</td>
+        <td>{{ s.Semester }}</td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>

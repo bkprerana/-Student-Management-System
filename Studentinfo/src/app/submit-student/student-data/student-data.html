@@ -1,0 +1,84 @@
+<!-- <h2>Basic Student Info</h2>
+
+<label>Roll Number:</label>
+<input type="number" [(ngModel)]="studentParent.RollNumber"><br><br>
+
+<label>Student Name:</label>
+<input type="text" [(ngModel)]="studentParent.StudentName"><br><br>
+
+<button (click)="openModal()">Next </button>
+
+CHILD MODAL 
+<app-submit-student-modal
+  *ngIf="showModal"
+  [studentData]="studentParent"
+  (sendData)="receiveChildData($event)"
+  (closeModal)="closeModal()">
+</app-submit-student-modal>
+
+<button routerLink="/">⬅ Back Home</button> -->
+
+
+
+<div class="student-container">
+
+  <div class="student-card">
+
+    <div class="top-badge">🎓</div>
+
+    <h2>Basic Student Info</h2>
+
+    <p class="subtitle">
+      Enter the primary student details
+    </p>
+
+    <!-- Roll -->
+    <div class="form-group">
+      <label>Roll Number</label>
+
+      <input
+        type="number"
+        [(ngModel)]="studentParent.RollNumber"
+        placeholder="Enter Roll Number">
+    </div>
+
+    <!-- Name -->
+    <div class="form-group">
+      <label>Student Name</label>
+
+      <input
+        type="text"
+        [(ngModel)]="studentParent.StudentName"
+        placeholder="Enter Student Name">
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+
+      <button
+        class="next-btn"
+        (click)="openModal()">
+
+        Next →
+      </button>
+
+      <button
+        class="back-btn"
+        routerLink="/">
+
+        ← Back Home
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CHILD MODAL -->
+  <app-submit-student-modal
+    *ngIf="showModal"
+    [studentData]="studentParent"
+    (sendData)="receiveChildData($event)"
+    (closeModal)="closeModal()">
+  </app-submit-student-modal>
+
+</div>

@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Outfit',sans-serif;
+}
+
+html,
+body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+/* ======================================== */
+/* BACKGROUND */
+/* ======================================== */
+
+.bg{
+
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    135deg,
+    #0b1020,
+    #111827,
+    #1e1b4b
+  );
+}
+
+/* RED GLOW */
+
+.bg::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  background:#ff4d6d;
+
+  border-radius:50%;
+
+  filter:blur(140px);
+
+  opacity:0.22;
+
+  top:-140px;
+  left:-120px;
+}
+
+/* ORANGE GLOW */
+
+.bg::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:380px;
+  height:380px;
+
+  background:#ff9f1c;
+
+  border-radius:50%;
+
+  filter:blur(140px);
+
+  opacity:0.18;
+
+  bottom:-150px;
+  right:-120px;
+}
+
+/* ======================================== */
+/* LOGIN CARD */
+/* ======================================== */
+
+.login-card{
+
+  width:380px;
+
+  padding:38px 32px;
+
+  border-radius:30px;
+
+  position:relative;
+
+  z-index:2;
+
+  overflow:hidden;
+
+  background:
+  rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,0.4);
+
+  text-align:center;
+
+  color:white;
+
+  animation:fadeUp 0.7s ease;
+}
+
+/* TOP LINE */
+
+.login-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:5px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #ff4d6d,
+    #ff9f1c
+  );
+}
+
+/* ======================================== */
+/* TITLE */
+/* ======================================== */
+
+.login-card h2{
+
+  font-size:38px;
+
+  font-weight:700;
+
+  margin-bottom:26px;
+
+  color:white;
+
+  letter-spacing:0.5px;
+}
+
+/* ======================================== */
+/* INPUTS */
+/* ======================================== */
+
+input{
+
+  width:100%;
+
+  padding:16px 18px;
+
+  margin:12px 0;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  color:white;
+
+  font-size:15px;
+
+  transition:0.3s ease;
+}
+
+input::placeholder{
+
+  color:#d1d5db;
+}
+
+input:focus{
+
+  border:1px solid #ff4d6d;
+
+  background:
+  rgba(255,255,255,0.12);
+
+  box-shadow:
+  0 0 0 4px rgba(255,77,109,0.15);
+}
+
+/* ======================================== */
+/* CAPTCHA SECTION */
+/* ======================================== */
+
+.captcha-container{
+
+  margin-top:10px;
+
+  width:100%;
+}
+
+/* CAPTCHA ROW */
+
+.captcha-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-top:8px;
+
+  margin-bottom:12px;
+}
+
+/* CAPTCHA IMAGE */
+
+.captcha-image{
+
+  width:150px;
+
+  height:55px;
+
+  min-width:150px;
+
+  display:block;
+
+  object-fit:contain;
+
+  background:#ffffff;
+
+  border-radius:12px;
+
+  border:2px solid rgba(255,255,255,0.08);
+
+  padding:4px;
+}
+
+/* CAPTCHA BUTTONS */
+
+.captcha-btn{
+
+  width:52px;
+
+  height:52px;
+
+  border:none;
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff4d6d,
+    #ff9f1c
+  );
+
+  transition:0.3s ease;
+
+  box-shadow:
+  0 10px 25px rgba(255,77,109,0.25);
+}
+
+.captcha-btn:hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:
+  0 15px 30px rgba(255,159,28,0.3);
+}
+
+/* CAPTCHA INPUT */
+
+.captcha-input{
+
+  margin-top:4px;
+}
+
+/* ======================================== */
+/* LOGIN BUTTON */
+/* ======================================== */
+
+.login-btn{
+
+  width:100%;
+
+  padding:15px;
+
+  margin-top:18px;
+
+  border:none;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff4d6d,
+    #ff9f1c
+  );
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 15px 35px rgba(255,77,109,0.25);
+}
+
+.login-btn:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 22px 45px rgba(255,159,28,0.3);
+}
+
+/* ======================================== */
+/* REGISTER LINK */
+/* ======================================== */
+
+.register-link{
+
+  margin-top:24px;
+
+  font-size:14px;
+
+  color:#d1d5db;
+}
+
+.register-link span{
+
+  color:#ff9f1c;
+
+  cursor:pointer;
+
+  font-weight:600;
+
+  transition:0.3s ease;
+}
+
+.register-link span:hover{
+
+  color:#ff4d6d;
+}
+
+/* ======================================== */
+/* ANIMATION */
+/* ======================================== */
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(40px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+  }
+}
+
+/* ======================================== */
+/* RESPONSIVE */
+/* ======================================== */
+
+@media(max-width:500px){
+
+  .login-card{
+
+    width:92%;
+
+    padding:32px 22px;
+
+    border-radius:24px;
+  }
+
+  .login-card h2{
+
+    font-size:30px;
+  }
+
+  .captcha-row{
+
+    gap:8px;
+  }
+
+  .captcha-image{
+
+    width:130px;
+
+    min-width:130px;
+
+    height:50px;
+  }
+
+  .captcha-btn{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:16px;
+  }
+}
+
+
+.forgot-password{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:-5px;
+
+    margin-bottom:10px;
+}
+
+.forgot-password a{
+
+    color:#ff9f1c;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.forgot-password a:hover{
+
+    color:#ff4d6d;
+
+    text-decoration:underline;
+}
+
+/* ======================================== */
+/* SHOW PASSWORD */
+/* ======================================== */
+
+.password-container{
+
+  width:100%;
+
+  margin-bottom:10px;
+}
+
+.show-password{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-top:5px;
+
+  margin-bottom:14px;
+
+  color:white;
+
+  font-size:14px;
+}
+
+.show-password input{
+
+  width:16px;
+
+  height:16px;
+
+  cursor:pointer;
+
+  margin:0;
+}
+
+.show-password label{
+
+  cursor:pointer;
+}

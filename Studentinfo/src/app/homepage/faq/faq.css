@@ -1,0 +1,497 @@
+/* ================================================= */
+/* FAQ SECTION */
+/* ================================================= */
+
+.faq-section{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:70px;
+
+  padding:80px 70px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  color:white;
+}
+
+/* ================================================= */
+/* LEFT SIDE */
+/* ================================================= */
+
+.faq-left{
+
+  flex:1;
+
+  position:sticky;
+
+  top:100px;
+
+  height:max-content;
+}
+
+/* ================================================= */
+/* BADGE */
+/* ================================================= */
+
+.faq-badge{
+
+  display:inline-block;
+
+  padding:12px 24px;
+
+  border-radius:40px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  margin-bottom:35px;
+
+  font-size:16px;
+
+  color:#f1f5f9;
+
+  backdrop-filter:blur(12px);
+}
+
+/* PULSE ANIMATION */
+
+.pulse-badge{
+
+  animation:pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow{
+
+  0%{
+    box-shadow:0 0 0px rgba(139,92,246,0.5);
+  }
+
+  50%{
+    box-shadow:0 0 25px rgba(139,92,246,0.9);
+  }
+
+  100%{
+    box-shadow:0 0 0px rgba(139,92,246,0.5);
+  }
+}
+
+/* ================================================= */
+/* TITLE */
+/* ================================================= */
+
+.faq-left h1{
+
+  font-size:72px;
+
+  line-height:1.05;
+
+  margin-bottom:35px;
+
+  font-weight:800;
+}
+
+/* GLOW TEXT */
+
+.glow-title{
+
+  animation:textGlow 3s infinite alternate;
+}
+
+@keyframes textGlow{
+
+  from{
+    text-shadow:0 0 10px rgba(139,92,246,0.3);
+  }
+
+  to{
+    text-shadow:0 0 30px rgba(139,92,246,0.9);
+  }
+}
+
+/* ================================================= */
+/* PARAGRAPH */
+/* ================================================= */
+
+.faq-left p{
+
+  font-size:20px;
+
+  line-height:2;
+
+  color:#cbd5e1;
+
+  margin-bottom:45px;
+}
+
+/* ================================================= */
+/* SUPPORT CARDS */
+/* ================================================= */
+
+.animated-support{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+}
+
+.support-card{
+
+  padding:22px 28px;
+
+  border-radius:24px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  font-size:18px;
+
+  font-weight:600;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  backdrop-filter:blur(12px);
+
+  transition:0.4s ease;
+
+  animation:floatCard 4s ease-in-out infinite;
+}
+
+.support-card span{
+
+  font-size:24px;
+}
+
+/* DIFFERENT DELAYS */
+
+.card1{
+  animation-delay:0s;
+}
+
+.card2{
+  animation-delay:1s;
+}
+
+.card3{
+  animation-delay:2s;
+}
+
+.card4{
+  animation-delay:3s;
+}
+
+@keyframes floatCard{
+
+  0%{
+    transform:translateX(0px);
+  }
+
+  50%{
+    transform:translateX(12px);
+  }
+
+  100%{
+    transform:translateX(0px);
+  }
+}
+
+/* HOVER */
+
+.support-card:hover{
+
+  transform:translateY(-5px) scale(1.03);
+
+  background:
+  rgba(139,92,246,0.15);
+
+  box-shadow:
+  0 15px 35px rgba(139,92,246,0.25);
+}
+
+/* ================================================= */
+/* FLOATING CIRCLES */
+/* ================================================= */
+
+.floating-circle{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  background:
+  rgba(139,92,246,0.15);
+
+  filter:blur(10px);
+
+  animation:floatCircle 8s infinite ease-in-out;
+}
+
+.circle1{
+
+  width:120px;
+  height:120px;
+
+  top:20px;
+  left:-30px;
+}
+
+.circle2{
+
+  width:80px;
+  height:80px;
+
+  bottom:50px;
+  left:200px;
+
+  animation-delay:2s;
+}
+
+.circle3{
+
+  width:150px;
+  height:150px;
+
+  top:300px;
+  right:40px;
+
+  animation-delay:4s;
+}
+
+@keyframes floatCircle{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-25px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* ================================================= */
+/* RIGHT SIDE */
+/* ================================================= */
+
+.faq-right{
+
+  flex:1.1;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:28px;
+}
+
+/* ================================================= */
+/* FAQ BOX */
+/* ================================================= */
+
+.faq-box{
+
+  position:relative;
+
+  padding:35px;
+
+  border-radius:28px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(15px);
+
+  overflow:hidden;
+
+  transition:0.4s ease;
+
+  animation:fadeUp 1s ease;
+}
+
+/* FADE UP */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0px);
+  }
+}
+
+/* SHINE EFFECT */
+
+.faq-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+
+  transition:0.8s;
+}
+
+.faq-box:hover::before{
+
+  left:100%;
+}
+
+/* HOVER */
+
+.faq-box:hover{
+
+  transform:translateY(-8px);
+
+  border:
+  1px solid rgba(139,92,246,0.5);
+
+  box-shadow:
+  0 20px 40px rgba(139,92,246,0.25);
+}
+
+/* ================================================= */
+/* FAQ NUMBER */
+/* ================================================= */
+
+.faq-number{
+
+  position:absolute;
+
+  top:20px;
+  right:25px;
+
+  font-size:40px;
+
+  font-weight:800;
+
+  color:
+  rgba(139,92,246,0.18);
+}
+
+/* ================================================= */
+/* FAQ TEXT */
+/* ================================================= */
+
+.faq-box h3{
+
+  font-size:24px;
+
+  margin-bottom:18px;
+}
+
+.faq-box p{
+
+  color:#cbd5e1;
+
+  line-height:1.9;
+
+  font-size:17px;
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media(max-width:1200px){
+
+  .faq-section{
+
+    flex-direction:column;
+  }
+
+  .faq-left{
+
+    position:relative;
+
+    top:0;
+  }
+
+  .faq-left h1{
+
+    font-size:58px;
+  }
+}
+
+@media(max-width:768px){
+
+  .faq-section{
+
+    padding:60px 20px;
+  }
+
+  .faq-left h1{
+
+    font-size:42px;
+  }
+
+  .faq-left p{
+
+    font-size:17px;
+  }
+
+  .faq-box{
+
+    padding:25px;
+  }
+
+  .faq-box h3{
+
+    font-size:20px;
+  }
+
+  .faq-box p{
+
+    font-size:15px;
+  }
+
+  .support-card{
+
+    font-size:16px;
+  }
+
+  .faq-number{
+
+    font-size:28px;
+  }
+}
