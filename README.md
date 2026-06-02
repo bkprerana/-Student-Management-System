@@ -49,7 +49,7 @@ A comprehensive full-stack Student Management System designed to streamline stud
 * Authentication: JWT, Session Management
 * Security: CAPTCHA, OTP Verification, Password Hashing
 
-## Project Highlights
+### Project Highlights
 
 * Single-device active login enforcement
 * Auto session expiration handling
