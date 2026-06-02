@@ -58,4 +58,7 @@ A comprehensive full-stack Student Management System designed to streamline stud
 * Secure authentication workflow
 * Academic performance analytics
 
+
+
 This project demonstrates full-stack development, secure authentication practices, database integration, dashboard analytics, and enterprise-level session management.
+
